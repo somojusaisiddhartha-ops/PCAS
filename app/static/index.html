@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VeriScan AI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">VeriScan AI</div>
+        <div class="avatar">VS</div>
+      </header>
+
+      <main class="layout">
+        <section class="hero">
+          <p class="eyebrow">AI-Powered Originality Review</p>
+          <h1>Project Similarity Checker</h1>
+          <p class="hero-copy">
+            Avoid duplicate project ideas and ensure originality through our high-performance AI precision engine.
+          </p>
+        </section>
+
+        <section class="upload-panel">
+          <form id="analyze-form" class="panel-form">
+            <label for="file-input" id="dropzone" class="dropzone">
+              <input id="file-input" name="file" type="file" accept=".docx" hidden />
+              <div class="upload-icon">^</div>
+              <h2>Upload Project Specification</h2>
+              <p>Drag and drop a Word document (.docx) here</p>
+              <span class="browse-button">Browse Files</span>
+              <span id="file-name" class="file-name">No file selected</span>
+            </label>
+
+            <div class="text-grid">
+              <label class="field">
+                <span>Project Title</span>
+                <input id="title-input" name="title" type="text" placeholder="Optional title for analysis" />
+              </label>
+            </div>
+
+            <label class="field text-field">
+              <span>Project Abstract</span>
+              <textarea
+                id="abstract-input"
+                name="abstract"
+                rows="5"
+                placeholder="Paste the project abstract if you do not want to upload a Word document."
+              ></textarea>
+            </label>
+
+            <div class="panel-actions">
+              <div class="action-left">
+                <button id="analyze-button" class="primary-button" type="submit">Check Similarity</button>
+                <button id="clear-button" class="ghost-button" type="button">Clear</button>
+              </div>
+              <div id="system-status" class="system-status ready">
+                <span class="status-dot"></span>
+                <span>SYSTEM READY</span>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="insights-grid">
+          <article class="status-card">
+            <div class="card-head">
+              <span class="card-label">Current Status</span>
+              <span id="risk-badge" class="risk-pill neutral">Awaiting Input</span>
+            </div>
+            <p id="summary-text" class="summary-text">
+              Upload a Word document or paste a project title and abstract to generate similarity matches, risk level, and uniqueness score.
+            </p>
+          </article>
+
+          <article class="score-card">
+            <span class="card-label">Uniqueness Score</span>
+            <div id="score-value" class="score-value">--%</div>
+          </article>
+        </section>
+
+        <section class="matches-section">
+          <div class="section-head">
+            <h2>Similarity Matches</h2>
+            <div class="match-badges">
+              <span id="all-matches-badge" class="chip">All Matches (0)</span>
+              <span id="high-risk-count-badge" class="chip alert">High Risk (0)</span>
+            </div>
+          </div>
+
+          <div id="matches-grid" class="matches-grid">
+            <article class="match-card empty-state">
+              <h3>No analysis yet</h3>
+              <p>Run a similarity check to see matched projects, domains, and duplication risk indicators.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-note">(c) 2026 VeriScan AI Precision Engine | Project Collision Avoidance System</footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

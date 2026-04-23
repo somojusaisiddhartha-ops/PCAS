@@ -1,0 +1,8 @@
+.vendor/
+.venv/
+.venv-1/
+__pycache__/
+*.pyc
+pcas.db
+sample_input.txt
+.env
